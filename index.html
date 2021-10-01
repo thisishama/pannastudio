@@ -21,21 +21,21 @@ body, html {
   background-size: cover;
 }
 
-/* First image (Logo. Full height) */
+/* First image */
 .bgimg-1 {
   background-image: url('images/pannastudio1.jpg');
   min-height: 100%;
 }
 
-/* Second image (Portfolio) */
+/* Second image */
 .bgimg-2 {
-  background-image: url("images/parallax2.jpg");
+  background-image: url("images/pannastudio2.jpg");
   min-height: 400px;
 }
 
-/* Third image (Contact) */
+/* Third image */
 .bgimg-3 {
-  background-image: url("images/parallax3.jpg");
+  background-image: url("images/pannastudio3.jpg");
   min-height: 400px;
 }
 
@@ -54,17 +54,18 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+  <div class="w3-bar w3-white" id="myNavbar">
+
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right w3-padding-16" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> WHO ARE WE</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> SKILLS</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> PRODUCTS</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
+    <!-- Right-sided navbar links -->
+    <a href="#home" class="w3-bar-item w3-button" ><img src="images/pannastudio_transparent.png" class="w3-round w3-image " alt="Photo of Me" width="43" height="43"></a>
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user"></i> WHO ARE WE</a>
+      <a href="#portfolio" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> SKILLS</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> PRODUCTS</a>
+    </div>
   </div>
 
   <!-- Navbar on small screens -->
@@ -72,7 +73,6 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">WHO ARE WE</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">SKILLS</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
 </div>
 
@@ -87,56 +87,8 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">WHO ARE WE</h3>
   <p class="w3-center"><em>Play On The Street Everywhere</em></p>
-  <p class="w3-center"><img src="images/pannastudio_logo.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="333" height="250"></p>
   <p>2021년 우리는 탄생했습니다. 길거리 축구는...</p>
 </div>
-
-
-<!-- About Section -->
-<!-- <div class="w3-container" style="padding:128px 16px" id="about">
-	<h3 class="w3-center">우리가 하는일</h3>
-	<div class="w3-row-padding w3-center" style="margin-top:32px">
-	  <div class="w3-quarter">
-		<i class="fa fa-star w3-margin-bottom w3-jumbo w3-center"></i>
-		<p class="w3-large">스킬 트레이닝</p>
-		<p>매주 토요일...</p>
-	  </div>
-	  <div class="w3-quarter">
-		<i class="fa fa-calendar w3-margin-bottom w3-jumbo"></i>
-		<p class="w3-large">행사</p>
-		<p>매월 첫째주 데카트론...</p>
-	  </div>
-	  <div class="w3-quarter">
-		<i class="fa fa-product-hunt w3-margin-bottom w3-jumbo"></i>
-		<p class="w3-large">케이지판매</p>
-		<p>케이지를 판매...</p>
-	  </div>
-	  <div class="w3-quarter">
-		<i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-		<p class="w3-large">스트릿사커 문화 전파</p>
-		<p>우리에 가장 큰 목적입니다.</p>
-	  </div>
-	</div>
-  </div> -->
-
-<!-- Team Container -->
-<!-- <div class="w3-container w3-center" id="team">
-	<h2>PLAYERS</h2>
-	<p>Meet the team - our office rats:</p>
-	
-	<div class="w3-row"><br>
-	<img src="/images/avatar_dk.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-	<p><span class="w3-large w3-text-black w3-margin-right">Chandler Bing.</span> Web Designer.</p>
-	<p>Jane Doe is just awesome. I am so happy to have met her!</p><br>
-	
-	<img src="/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-	<p><span class="w3-large w3-text-black w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
-	<p>Jane Doe saved us from a web disaster.</p><br>
-	
-	<img src="/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-	<p><span class="w3-large w3-text-black w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-	<p>No one is better than Jane Doe.</p><br>
-	</div> -->
 
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
@@ -185,7 +137,7 @@ body, html {
     <div class="w3-col m3">
       <img src="images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    <!-- <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button> -->
   </div>
 </div>
 
@@ -254,7 +206,8 @@ function myFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
     } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        // navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        navbar.className = " w3-bar w3-white";
     }
 }
 
