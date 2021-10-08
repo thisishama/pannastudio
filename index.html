@@ -72,74 +72,86 @@ body, html {
 .w3-third *{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-third *:hover{opacity:1}
 </style>
-<body>
 
-<div class="w3-top">
-  <div class="w3-bar w3-white" id="myNavbar">
+<style>
+  body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+  .w3-third img:hover{opacity: 1}
+  </style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
 
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right w3-padding-16" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button" ><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="43" height="43"></a>
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user"></i> WHO ARE WE</a>
-      <a href="#events" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> EVENTS</a>
-      <a href="#pannastudio" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> PANNASTUDIO</a>
-      <a href="#products" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> PRODUCTS</a>
-    </div>
-  </div>
 
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">WHO ARE WE</a>
-    <a href="#events" class="w3-bar-item w3-button" onclick="toggleFunction()">EVENTS</a>
-    <a href="#pannastudio" class="w3-bar-item w3-button" onclick="toggleFunction()">PANNASTUDIO</a>
-    <a href="#products" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
-  </div>
-</div>
-
-<!-- <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity w3-hide-small">MAKE PLAYGROUND</span>
-    <span class="w3-center w3-padding w3-black w3-small w3-wide w3-animate-opacity w3-hide-large w3-hide-medium">MAKE PLAYGROUND</span>
-  </div>
-  <div class="w3-display-bottomleft w3-container" style="color: black !important">
-    <p class="w3-large">문구를 넣을 수 있음</p>
-    <p class="w3-large" >    
-      <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-    </p>
-  </div>
-</div> -->
-<div class="w3-display-container w3-opacity-min" id="home" style="margin-top: 59px;">
-  <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/pannastudio1.jpg" alt="Image 1" width="100%">
-    <div class="w3-display-bottomleft w3-padding w3-hide-small" style="width:35%">
-      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-        <h1 class="w3-xlarge">Take photos with our app</h1>
-        <hr class="w3-opacity">
-        <p>Super simple installment: free of charge</p>
+  <!-- <div class="w3-top">
+    <div class="w3-bar w3-white" id="myNavbar">
+  
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right w3-padding-16" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#home" class="w3-bar-item w3-button" ><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="43" height="43"></a>
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user"></i> WHO ARE WE</a>
+        <a href="#events" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> EVENTS</a>
+        <a href="#pannastudio" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> PANNASTUDIO</a>
+        <a href="#products" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> PRODUCTS</a>
       </div>
     </div>
+  
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">WHO ARE WE</a>
+      <a href="#events" class="w3-bar-item w3-button" onclick="toggleFunction()">EVENTS</a>
+      <a href="#pannastudio" class="w3-bar-item w3-button" onclick="toggleFunction()">PANNASTUDIO</a>
+      <a href="#products" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
+    </div>
+  </div> -->
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <!-- <h3 class="w3-padding-64 w3-center"><b>SOME<br>NAME</b></h3> -->
+  <h3 class="w3-padding-64 w3-center"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="50%" height="50%"></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">WHO ARE WE</a> 
+  <a href="#events" onclick="w3_close()" class="w3-bar-item w3-button">EVENTS</a> 
+  <a href="#pannastudio" onclick="w3_close()" class="w3-bar-item w3-button">PANNASTUDIO</a> 
+  <a href="#products" onclick="w3_close()" class="w3-bar-item w3-button">PRODUCTS</a> 
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="43px" height="43px"></span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+
+
+ <!-- Push down content on small screens --> 
+ <div class="w3-hide-large" style="margin-top:93px"></div>
+
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<div class="w3-display-container w3-opacity-min" id="home">
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/pannastudio1.jpg" alt="Image 1" width="100%">
   </div>
   <div class="mySlides w3-animate-opacity">
     <img class="w3-image" src="images/pannastudio2.jpg" alt="Image 2" width="100%">
-    <div class="w3-display-bottomleft w3-padding w3-hide-small" style="width:35%">
-      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-        <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
-        <hr class="w3-opacity">
-        <p>Choose from thousands of features</p>
-      </div>
-    </div>
   </div>
   <div class="mySlides w3-animate-opacity">
     <img class="w3-image" src="images/pannastudio3.jpg" alt="Image 3" width="100%">
-    <div class="w3-display-right w3-padding w3-hide-small" style="width:35%">
-      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-        <h1 class="w3-xlarge">Smart Design</h1>
-        <hr class="w3-opacity">
-        <p>Customize photos as you go</p>
-      </div>
-    </div>
   </div>
   <a class="w3-button w3-black w3-display-topright w3-margin-right w3-round w3-hide-small w3-display-hover w3-opacity w3-hover-opacity-off " style="margin-top: 16px;" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a>
   <!-- <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a> -->
@@ -329,7 +341,8 @@ body, html {
   </div>
   <p>Copyright © 2021 Makeplayground</a></p>
 </footer>
- 
+</div> 
+
 <script>
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -385,5 +398,28 @@ interval = setInterval(function() {
 }, 10000);
 </script>
 
+
+<script>
+  // Script to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+  
+  </script>
+  
 </body>
 </html>
