@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-<title>PANNASTUDIO</title>
+<title>MAKE PLAYGROUND</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
@@ -13,7 +19,6 @@ body, html {
   line-height: 1.8;
 }
 
-/* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
   background-position: center;
@@ -21,19 +26,16 @@ body, html {
   background-size: cover;
 }
 
-/* First image */
 .bgimg-1 {
-  background-image: url('images/pannastudio1.jpg');
+  background-image: url('images/main.jpg');
   min-height: 100%;
 }
 
-/* Second image */
 .bgimg-2 {
   background-image: url("images/pannastudio2.jpg");
   min-height: 400px;
 }
 
-/* Third image */
 .bgimg-3 {
   background-image: url("images/pannastudio3.jpg");
   min-height: 400px;
@@ -42,65 +44,155 @@ body, html {
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
-/* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
     min-height: 400px;
   }
 }
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.w3-third *{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-third *:hover{opacity:1}
 </style>
 <body>
 
-<!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white" id="myNavbar">
 
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right w3-padding-16" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <!-- Right-sided navbar links -->
-    <a href="#home" class="w3-bar-item w3-button" ><img src="images/pannastudio_transparent.png" class="w3-round w3-image " alt="Photo of Me" width="43" height="43"></a>
+    <a href="#home" class="w3-bar-item w3-button" ><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="43" height="43"></a>
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user"></i> WHO ARE WE</a>
-      <a href="#portfolio" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> SKILLS</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> PRODUCTS</a>
+      <a href="#events" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> EVENTS</a>
+      <a href="#pannastudio" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> PANNASTUDIO</a>
+      <a href="#products" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> PRODUCTS</a>
     </div>
   </div>
 
-  <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">WHO ARE WE</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">SKILLS</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
+    <a href="#events" class="w3-bar-item w3-button" onclick="toggleFunction()">EVENTS</a>
+    <a href="#pannastudio" class="w3-bar-item w3-button" onclick="toggleFunction()">PANNASTUDIO</a>
+    <a href="#products" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
   </div>
 </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+<!-- <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">PANNASTUDIO</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity w3-hide-small">MAKE PLAYGROUND</span>
+    <span class="w3-center w3-padding w3-black w3-small w3-wide w3-animate-opacity w3-hide-large w3-hide-medium">MAKE PLAYGROUND</span>
   </div>
+  <div class="w3-display-bottomleft w3-container" style="color: black !important">
+    <p class="w3-large">문구를 넣을 수 있음</p>
+    <p class="w3-large" >    
+      <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
+    </p>
+  </div>
+</div> -->
+<div class="w3-display-container w3-opacity-min" id="home" style="margin-top: 59px;">
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/pannastudio1.jpg" alt="Image 1" style="min-width:500px" width="100%">
+    <div class="w3-display-bottomleft w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">Take photos with our app</h1>
+        <hr class="w3-opacity">
+        <p>Super simple installment: free of charge</p>
+      </div>
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/pannastudio2.jpg" alt="Image 2" style="min-width:500px" width="100%">
+    <div class="w3-display-bottomleft w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
+        <hr class="w3-opacity">
+        <p>Choose from thousands of features</p>
+      </div>
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/pannastudio3.jpg" alt="Image 3" style="min-width:500px" width="100%">
+    <div class="w3-display-right w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">Smart Design</h1>
+        <hr class="w3-opacity">
+        <p>Customize photos as you go</p>
+      </div>
+    </div>
+  </div>
+  <a class="w3-button w3-black w3-display-topright w3-margin-right w3-round w3-hide-small w3-display-hover w3-opacity w3-hover-opacity-off " style="margin-top: 16px;" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a>
+  <!-- <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a> -->
+  <!-- <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a> -->
 </div>
 
-<!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">WHO ARE WE</h3>
-  <p class="w3-center"><em>Play On The Street Everywhere</em></p>
-  <p>2021년 우리는 탄생했습니다. 길거리 축구는...</p>
+  <h3 class="w3-center">제목</h3>
+  <p class="w3-center"><em>부제목</p><br>
+  <p>MP(makeplayground)는 줄고 있는 운동장에 대한 안타까움에서 시작하였습니다.
+    현대 사회가 공존과 상생의 가치를 추구하고 있지만, 역설적으로 우리의 현실은 이와 반대로 향하고 있습니다. 인종, 나이, 성별 등의 경계를 초월하여 자유롭게 뛰놀며 소통할 수 있는 공간의 부재는 우리 사회를 더욱 갈등하게 만드는 하나의 이유일지도 모릅니다. 이같은 현실 앞에 MP는 운동장을 잃어버린 기성세대와 신세대들에게 현 시대에 맞는 새로운 공간의 제공을 통해 현대사회에 진정으로 필요한 가치를 실현하고자 합니다.
+  </p>
+  <p>안녕하세요 MP 대표 김동권입니다. 승리에 대한 집착, 무차별적인 경쟁, 잃어버린 존중, 우리는 지금 치열한 경쟁 사회를 살아가고 있습니다. 이러한 초 경쟁을 이겨낼 수 있는 방법은 개인이 지닌 창의성을 발견하고 계발하는 것이지만, 이와 달리 우리는 여전히 획일화된 교육과 문화 속에 살아가고 있습니다. 그럼에도 우리를 창의적이게 만드는 공간이었던 운동장은 그마저도 자리를 위협받고 있는 실정입니다. 이러한 현실 앞에 우리가 내놓은 대답은 ‘스트릿사커’였습니다. 유럽에서 시작하여 페어플레이와 존중, 공정과 즐거움의 가치를 추구하는 스트릿사커는 우리 앞에 놓여 있는 위기를 타개할 수 있는 하나의 좋은 방법이라는 생각을 하게 되었습니다. 특히, 스트릿사커의 핵심 중 하나인 판나게임과 판나케이지는 이러한 가치를 보다 구체적으로 실현할 수 있는 도구임을 우리는 깨달았습니다. 이러한 도구들을 통해 우리 사회가, 그리고 이 세상이 더욱 아름답게 변해 나갈 수 있기를 기도합니다
+  </p>
+
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>
 </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">SKILLS</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">EVENTS</span>
   </div>
 </div>
 
 <!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">SKILLS</h3>
-  <p class="w3-center"><em>감상해 보세요.</p><br>
+<div class="w3-content w3-container w3-padding-64" id="events">
+  <h3 class="w3-center">제목</h3>
+  <p class="w3-center"><em>부제목</p><br>
+  <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+  </p>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
@@ -122,7 +214,7 @@ body, html {
   </div>
 
   <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
+    <!-- <div class="w3-col m3">
       <img src="images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
     </div>
 
@@ -136,12 +228,60 @@ body, html {
 
     <div class="w3-col m3">
       <img src="images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <!-- <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button> -->
+    </div> -->
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
   </div>
 </div>
 
-<!-- Modal for full size images on click-->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PANNASTUDIO</span>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="pannastudio">
+  <h3 class="w3-center">제목</h3>
+  <p class="w3-center"><em>부제목</p><br>
+  <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+  </p>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-center w3-section">
+      <!-- Photo Grid -->
+      <div class="w3-row-padding" id="myGrid" style="margin-bottom:0px">
+        <div class="w3-third">
+          <video width="100%" controls>
+            <source src="images/Football - 34604.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <iframe style="width:100%;" src="https://www.youtube.com/embed/o7LLWYSL-hM">
+          </iframe>
+          <img src="images/p1.jpg" style="width:100%">
+        </div>
+  
+        <div class="w3-third">
+          <img src="images/p1.jpg" style="width:100%; margin-bottom: 16px;">
+          <img src="images/p3.jpg" style="width:100%">
+        </div>
+  
+        <div class="w3-third">
+          <img src="images/p1.jpg" style="width:100%">
+          <img src="images/p2.jpg" style="width:100%">
+          <img src="images/p2.jpg" style="width:100%">
+
+        </div>
+      </div>
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>
+</div>
+
+
 <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
   <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
@@ -150,17 +290,22 @@ body, html {
   </div>
 </div>
 
-<!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">PRODUCTS</span>
   </div>
 </div>
 
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">BUY PANNA COURT</h3>
-  <p class="w3-center"><em>우리는 파나케이지를 직접 제작하고 판매하고 있습니다. 케이지 설치 문의는 아래..</em></p>
+<div class="w3-content w3-container w3-padding-64" id="products">
+  <h3 class="w3-center">제목</h3>
+  <p class="w3-center"><em>부제목</p><br>
+  <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+  </p>
 
   <div class="w3-row w3-padding-32 w3-section">
     <div class="w3-col m4 w3-container">
@@ -176,22 +321,16 @@ body, html {
   </div>
 </div>
 
-<!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Copyright © 2021 Makeplayground</a></p>
 </footer>
  
 <script>
-// Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
@@ -199,7 +338,6 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
-// Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
@@ -211,7 +349,6 @@ function myFunction() {
     }
 }
 
-// Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
     var x = document.getElementById("navDemo");
     if (x.className.indexOf("w3-show") == -1) {
@@ -220,6 +357,32 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+var slideIndex = 1;
+let interval = null;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+  if (interval) {
+    clearInterval(interval);
+  }
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+interval = setInterval(function() {
+  plusDivs(1);
+}, 10000);
 </script>
 
 </body>
