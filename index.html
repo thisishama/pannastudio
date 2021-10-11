@@ -8,37 +8,8 @@
 <style>
 html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
-/* .w3-tag, .fa {cursor:pointer}
-.w3-tag {height:15px;width:15px;padding:0;margin-top:6px} */
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-/* body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-} */
-
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.bgimg-1 {
-  background-image: url('images/main.jpg');
-  min-height: 100%;
-}
-
-.bgimg-2 {
-  background-image: url("images/pannastudio2.jpg");
-  min-height: 400px;
-}
-
-.bgimg-3 {
-  background-image: url("images/pannastudio3.jpg");
-  min-height: 400px;
-}
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
@@ -50,65 +21,34 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   }
 }
 
-.video-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow: hidden;
-}
- 
-.video-container iframe,
-.video-container object,
-.video-container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
 .w3-third *{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-third *:hover{opacity:1}
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
 </style>
 
-<style>
-  body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-  .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
-  .w3-third img:hover{opacity: 1}
-  </style>
 <body class="w3-light-grey w3-content">
-
-
-  <!-- <div class="w3-top">
-    <div class="w3-bar w3-white" id="myNavbar">
-  
-      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right w3-padding-16" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
-      <a href="#home" class="w3-bar-item w3-button" ><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="43" height="43"></a>
-      <div class="w3-right w3-hide-small">
-        <a href="#about" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user"></i> WHO ARE WE</a>
-        <a href="#events" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> EVENTS</a>
-        <a href="#pannastudio" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-th"></i> PANNASTUDIO</a>
-        <a href="#products" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> PRODUCTS</a>
-      </div>
-    </div>
-  
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">WHO ARE WE</a>
-      <a href="#events" class="w3-bar-item w3-button" onclick="toggleFunction()">EVENTS</a>
-      <a href="#pannastudio" class="w3-bar-item w3-button" onclick="toggleFunction()">PANNASTUDIO</a>
-      <a href="#products" class="w3-bar-item w3-button" onclick="toggleFunction()">PRODUCTS</a>
-    </div>
-  </div> -->
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <!-- <h3 class="w3-padding-64 w3-center"><b>SOME<br>NAME</b></h3> -->
   <h3 class="w3-padding-64 w3-center"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="50%" height="50%"></h3>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">WHO ARE WE</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">WHO WE ARE</a> 
   <a href="#events" onclick="w3_close()" class="w3-bar-item w3-button">EVENTS</a> 
   <a href="#pannastudio" onclick="w3_close()" class="w3-bar-item w3-button">PANNASTUDIO</a> 
   <a href="#products" onclick="w3_close()" class="w3-bar-item w3-button">PRODUCTS</a> 
@@ -126,280 +66,236 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
 
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:64px"></div>
 
-
- <!-- Push down content on small screens --> 
- <div class="w3-hide-large" style="margin-top:64px"></div>
-
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-</nav>
-
-<div class="w3-display-container w3-opacity-min" id="home">
-  <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/main.jpg" alt="Image 1" width="100%">
+  <div class="w3-display-container w3-opacity-min" id="home">
+    <div class="mySlides w3-animate-opacity">
+      <img class="w3-image" src="images/main.jpg" alt="Image 1" width="100%">
+    </div>
+    <div class="mySlides w3-animate-opacity">
+      <img class="w3-image" src="images/pannastudio2.jpg" alt="Image 2" width="100%">
+    </div>
+    <div class="mySlides w3-animate-opacity">
+      <img class="w3-image" src="images/pannastudio3.jpg" alt="Image 3" width="100%">
+    </div>
+    <button class="w3-tiny w3-padding-small w3-margin-left w3-button w3-white w3-circle w3-opacity w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-tiny w3-padding-small w3-margin-right w3-button w3-white w3-circle w3-opacity w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
-  <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/pannastudio2.jpg" alt="Image 2" width="100%">
+  <div class="w3-center" id="demodots">
+    <span class="carousel__navigation-button demodots w3-blue" onclick="currentDiv(1)"></span>
+    <span class="carousel__navigation-button demodots w3-gray" onclick="currentDiv(2)"></span>
+    <span class="carousel__navigation-button demodots w3-gray" onclick="currentDiv(3)"></span>
   </div>
-  <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/pannastudio3.jpg" alt="Image 3" width="100%">
-  </div>
-  <a class="w3-button w3-black w3-display-topright w3-margin-right w3-round w3-hide-small w3-display-hover w3-opacity w3-hover-opacity-off " style="margin-top: 16px;" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a>
-  <!-- <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a> -->
-  <!-- <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)"><i class="fa fa-angle-right"></i></a> -->
-</div>
 
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">제목</h3>
-  <p class="w3-center"><em>부제목</p><br>
-  <p>MP(makeplayground)는 줄고 있는 운동장에 대한 안타까움에서 시작하였습니다.
-    현대 사회가 공존과 상생의 가치를 추구하고 있지만, 역설적으로 우리의 현실은 이와 반대로 향하고 있습니다. 인종, 나이, 성별 등의 경계를 초월하여 자유롭게 뛰놀며 소통할 수 있는 공간의 부재는 우리 사회를 더욱 갈등하게 만드는 하나의 이유일지도 모릅니다. 이같은 현실 앞에 MP는 운동장을 잃어버린 기성세대와 신세대들에게 현 시대에 맞는 새로운 공간의 제공을 통해 현대사회에 진정으로 필요한 가치를 실현하고자 합니다.
-  </p>
-  <p>안녕하세요 MP 대표 김동권입니다. 승리에 대한 집착, 무차별적인 경쟁, 잃어버린 존중, 우리는 지금 치열한 경쟁 사회를 살아가고 있습니다. 이러한 초 경쟁을 이겨낼 수 있는 방법은 개인이 지닌 창의성을 발견하고 계발하는 것이지만, 이와 달리 우리는 여전히 획일화된 교육과 문화 속에 살아가고 있습니다. 그럼에도 우리를 창의적이게 만드는 공간이었던 운동장은 그마저도 자리를 위협받고 있는 실정입니다. 이러한 현실 앞에 우리가 내놓은 대답은 ‘스트릿사커’였습니다. 유럽에서 시작하여 페어플레이와 존중, 공정과 즐거움의 가치를 추구하는 스트릿사커는 우리 앞에 놓여 있는 위기를 타개할 수 있는 하나의 좋은 방법이라는 생각을 하게 되었습니다. 특히, 스트릿사커의 핵심 중 하나인 판나게임과 판나케이지는 이러한 가치를 보다 구체적으로 실현할 수 있는 도구임을 우리는 깨달았습니다. 이러한 도구들을 통해 우리 사회가, 그리고 이 세상이 더욱 아름답게 변해 나갈 수 있기를 기도합니다
-  </p>
 
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-    </div>
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">WHO WE ARE</h3>
+    <p class="w3-center"><em>PLAYGROUND EVERYWHERE</p><br>
+    <p>MP(makeplayground)는 줄고 있는 운동장에 대한 안타까움에서 시작하였습니다.
+      현대 사회가 공존과 상생의 가치를 추구하고 있지만, 역설적으로 우리의 현실은 이와 반대로 향하고 있습니다. 인종, 나이, 성별 등의 경계를 초월하여 자유롭게 뛰놀며 소통할 수 있는 공간의 부재는 우리 사회를 더욱 갈등하게 만드는 하나의 이유일지도 모릅니다. 이같은 현실 앞에 MP는 운동장을 잃어버린 기성세대와 신세대들에게 현 시대에 맞는 새로운 공간의 제공을 통해 현대사회에 진정으로 필요한 가치를 실현하고자 합니다.
+    </p>
+    <p>안녕하세요 MP 대표 김동권입니다. 승리에 대한 집착, 무차별적인 경쟁, 잃어버린 존중, 우리는 지금 치열한 경쟁 사회를 살아가고 있습니다. 이러한 초 경쟁을 이겨낼 수 있는 방법은 개인이 지닌 창의성을 발견하고 계발하는 것이지만, 이와 달리 우리는 여전히 획일화된 교육과 문화 속에 살아가고 있습니다. 그럼에도 우리를 창의적이게 만드는 공간이었던 운동장은 그마저도 자리를 위협받고 있는 실정입니다. 이러한 현실 앞에 우리가 내놓은 대답은 ‘스트릿사커’였습니다. 유럽에서 시작하여 페어플레이와 존중, 공정과 즐거움의 가치를 추구하는 스트릿사커는 우리 앞에 놓여 있는 위기를 타개할 수 있는 하나의 좋은 방법이라는 생각을 하게 되었습니다. 특히, 스트릿사커의 핵심 중 하나인 판나게임과 판나케이지는 이러한 가치를 보다 구체적으로 실현할 수 있는 도구임을 우리는 깨달았습니다. 이러한 도구들을 통해 우리 사회가, 그리고 이 세상이 더욱 아름답게 변해 나갈 수 있기를 기도합니다
+    </p>
 
-    <div class="w3-col m3">
-      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      </div>
 
-    <div class="w3-col m3">
-      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
+      <div class="w3-col m3">
+        <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      </div>
 
-    <div class="w3-col m3">
-      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-  </div>
-</div>
+      <div class="w3-col m3">
+        <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      </div>
 
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">EVENTS</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="events">
-  <h3 class="w3-center">제목</h3>
-  <p class="w3-center"><em>부제목</p><br>
-  <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-  </p>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <div class="w3-col m3">
+        <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      </div>
+      <!-- <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button> -->
     </div>
   </div>
 
-  <div class="w3-row-padding w3-center w3-section">
-    <!-- <div class="w3-col m3">
-      <img src="images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+  <!-- Container (Portfolio Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="events">
+    <h3 class="w3-center">EVENTS</h3>
+    <p class="w3-center"><em>부제목</p><br>
+    <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    </p>
+
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      </div>
     </div>
 
-    <div class="w3-col m3">
-      <img src="images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
+    <div class="w3-row-padding w3-center w3-section">
+      <!-- <div class="w3-col m3">
+        <img src="images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      </div>
 
-    <div class="w3-col m3">
-      <img src="images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
+      <div class="w3-col m3">
+        <img src="images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+      </div>
 
-    <div class="w3-col m3">
-      <img src="images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div> -->
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+      <div class="w3-col m3">
+        <img src="images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      </div> -->
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    </div>
   </div>
-</div>
 
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PANNASTUDIO</span>
-  </div>
-</div>
+  <div class="w3-content w3-container w3-padding-64" id="pannastudio">
+    <h3 class="w3-center">PANNASTUDIO</h3>
+    <p class="w3-center"><em>부제목</p><br>
+    <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    </p>
 
-<div class="w3-content w3-container w3-padding-64" id="pannastudio">
-  <h3 class="w3-center">제목</h3>
-  <p class="w3-center"><em>부제목</p><br>
-  <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-  </p>
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-center w3-section">
+        <!-- Photo Grid -->
+        <div class="w3-row-padding" id="myGrid" style="margin-bottom:0px">
+          <div class="w3-third">
+            <video width="100%" controls>
+              <source src="images/Football - 34604.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <iframe style="width:100%;" src="https://www.youtube.com/embed/o7LLWYSL-hM">
+            </iframe>
+            <img src="images/p1.jpg" style="width:100%">
+          </div>
+    
+          <div class="w3-third">
+            <img src="images/p1.jpg" style="width:100%; margin-bottom: 16px;">
+            <img src="images/p3.jpg" style="width:100%">
+          </div>
+    
+          <div class="w3-third">
+            <img src="images/p1.jpg" style="width:100%">
+            <img src="images/p2.jpg" style="width:100%">
+            <img src="images/p2.jpg" style="width:100%">
 
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-center w3-section">
-      <!-- Photo Grid -->
-      <div class="w3-row-padding" id="myGrid" style="margin-bottom:0px">
-        <div class="w3-third">
-          <video width="100%" controls>
-            <source src="images/Football - 34604.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-          <iframe style="width:100%;" src="https://www.youtube.com/embed/o7LLWYSL-hM">
-          </iframe>
-          <img src="images/p1.jpg" style="width:100%">
+          </div>
         </div>
-  
-        <div class="w3-third">
-          <img src="images/p1.jpg" style="width:100%; margin-bottom: 16px;">
-          <img src="images/p3.jpg" style="width:100%">
-        </div>
-  
-        <div class="w3-third">
-          <img src="images/p1.jpg" style="width:100%">
-          <img src="images/p2.jpg" style="width:100%">
-          <img src="images/p2.jpg" style="width:100%">
+      </div>
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    </div>
+  </div>
 
+  <div class="w3-content w3-container w3-padding-64" id="products">
+    <h3 class="w3-center">PRODUCTS</h3>
+    <p class="w3-center"><em>부제목</p><br>
+    <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+      설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
+    </p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <img src="images/map.jpg" class="w3-image w3-round" style="width:100%">
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Suwon, KOR<br>
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
         </div>
       </div>
     </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
   </div>
-</div>
 
-
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">PRODUCTS</span>
-  </div>
-</div>
-
-<div class="w3-content w3-container w3-padding-64" id="products">
-  <h3 class="w3-center">제목</h3>
-  <p class="w3-center"><em>부제목</p><br>
-  <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-    설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
-  </p>
-
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="images/map.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Suwon, KOR<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
-      </div>
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
     </div>
   </div>
+
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
+    </div>
+    <p>Copyright © 2021 Makeplayground</a></p>
+  </footer>
 </div>
 
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-    <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-  </div>
-  <p>Copyright © 2021 Makeplayground</a></p>
-</footer>
-</div> 
-
 <script>
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        // navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-        navbar.className = " w3-bar w3-white";
-    }
-}
-
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-
-var slideIndex = 1;
-let interval = null;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-  if (interval) {
-    clearInterval(interval);
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
   }
-}
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
   }
-  x[slideIndex-1].style.display = "block";  
-}
 
-interval = setInterval(function() {
-  plusDivs(1);
-}, 10000);
-</script>
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demodots");
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-blue", "");
+      dots[i].className = dots[i].className.replace(" w3-gray", "");
+
+      if (i == slideIndex-1) {
+        dots[i].className += " w3-blue";
+      } else {
+        dots[i].className += " w3-gray";
+      }
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
 
 
-<script>
-  // Script to open and close sidebar
   function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -409,16 +305,7 @@ interval = setInterval(function() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
   }
-  
-  // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
-  
-  </script>
+</script>
   
 </body>
 </html>
