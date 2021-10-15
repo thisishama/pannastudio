@@ -6,38 +6,112 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+html,body,h1,h2,h3,h4,h5,h6 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
+img {vertical-align: middle;}
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-
 .w3-third *{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-third *:hover{opacity:1}
 
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
 
-.carousel__navigation-button {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-color: #333;
-  background-clip: content-box;
-  border: 0.25rem solid transparent;
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
   border-radius: 50%;
-  font-size: 0;
-  transition: transform 0.1s;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 </style>
 
@@ -69,23 +143,32 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Push down content on small screens --> 
   <div class="w3-hide-large" style="margin-top:64px"></div>
 
-  <div class="w3-display-container w3-opacity-min" id="home">
-    <div class="mySlides w3-animate-opacity">
-      <img class="w3-image" src="images/main.jpg" alt="Image 1" width="100%">
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/main.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
     </div>
-    <div class="mySlides w3-animate-opacity">
-      <img class="w3-image" src="images/pannastudio2.jpg" alt="Image 2" width="100%">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/pannastudio2.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
     </div>
-    <div class="mySlides w3-animate-opacity">
-      <img class="w3-image" src="images/pannastudio3.jpg" alt="Image 3" width="100%">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/pannastudio3.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
     </div>
-    <button class="w3-tiny w3-padding-small w3-margin-left w3-button w3-white w3-circle w3-opacity w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-tiny w3-padding-small w3-margin-right w3-button w3-white w3-circle w3-opacity w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
-  <div class="w3-center" id="demodots">
-    <span class="carousel__navigation-button demodots w3-blue" onclick="currentDiv(1)"></span>
-    <span class="carousel__navigation-button demodots w3-gray" onclick="currentDiv(2)"></span>
-    <span class="carousel__navigation-button demodots w3-gray" onclick="currentDiv(3)"></span>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
   </div>
 
 
@@ -262,40 +345,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     captionText.innerHTML = element.alt;
   }
 
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
-  }
-
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demodots");
-    if (n > x.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" w3-blue", "");
-      dots[i].className = dots[i].className.replace(" w3-gray", "");
-
-      if (i == slideIndex-1) {
-        dots[i].className += " w3-blue";
-      } else {
-        dots[i].className += " w3-gray";
-      }
-    }
-    x[slideIndex-1].style.display = "block";  
-  }
-
-  function currentDiv(n) {
-    showDivs(slideIndex = n);
-  }
-
-
   function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -304,6 +353,33 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
   }
 </script>
   
