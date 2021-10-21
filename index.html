@@ -6,54 +6,17 @@
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family:"Lato", sans-serif}
-.mySlides {display:none}
-img {vertical-align: middle;}
-
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+html {font-family: 'Nanum Gothic', sans-serif;}
+/* 
 .w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+.w3-hover-opacity {cursor: pointer;} */
 
 .w3-third *{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-third *:hover{opacity:1}
 
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
 
 /* Caption text */
 .text {
@@ -73,54 +36,55 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   padding: 8px 12px;
   position: absolute;
   top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 5px;
-  width: 5px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  text-align: right;
 }
 </style>
 
-<body class="w3-light-grey w3-content">
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="./swiper/swiper-bundle.min.css" />
+
+<!-- Demo styles -->
+<style>
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+
+<!-- <body class="w3-light-grey w3-content" style="max-width:980px"> -->
+<body class="w3-auto">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center w3-card" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <!-- <h3 class="w3-padding-64 w3-center"><b>SOME<br>NAME</b></h3> -->
-  <h3 class="w3-padding-64 w3-center"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="50%" height="50%"></h3>
+  <h3 class="w3-padding-64 w3-center"><a href="#about"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="50%" height="50%"></h3>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">WHO WE ARE</a> 
   <a href="#events" onclick="w3_close()" class="w3-bar-item w3-button">EVENTS</a> 
@@ -143,38 +107,31 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   <!-- Push down content on small screens --> 
   <div class="w3-hide-large" style="margin-top:64px"></div>
 
-  <div class="slideshow-container" id="slides">
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="images/main.jpg" style="width:100%">
-      <div class="text">Caption Text</div>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="numbertext">1 / 3</div>
+        <img src="images/main.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      <div class="swiper-slide">
+        <div class="numbertext">2 / 3</div>
+        <img src="images/pannastudio2.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      <div class="swiper-slide">
+        <div class="numbertext">3 / 3</div>
+        <img src="images/pannastudio3.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
     </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="images/pannastudio2.jpg" style="width:100%">
-      <div class="text">Caption Two</div>
-    </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="images/pannastudio3.jpg" style="width:100%">
-      <div class="text">Caption Three</div>
-    </div>
-<!--     
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+    <div class="swiper-pagination"></div>
   </div>
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
-  </div>
-
 
   <div class="w3-content w3-container w3-padding-64" id="about">
     <h3 class="w3-center">WHO WE ARE</h3>
-    <p class="w3-center"><em>PLAYGROUND EVERYWHERE</p><br>
+    <p class="w3-center">PLAYGROUND EVERYWHERE</p><br>
     <p>MP(makeplayground)는 줄고 있는 운동장에 대한 안타까움에서 시작하였습니다.
       현대 사회가 공존과 상생의 가치를 추구하고 있지만, 역설적으로 우리의 현실은 이와 반대로 향하고 있습니다. 인종, 나이, 성별 등의 경계를 초월하여 자유롭게 뛰놀며 소통할 수 있는 공간의 부재는 우리 사회를 더욱 갈등하게 만드는 하나의 이유일지도 모릅니다. 이같은 현실 앞에 MP는 운동장을 잃어버린 기성세대와 신세대들에게 현 시대에 맞는 새로운 공간의 제공을 통해 현대사회에 진정으로 필요한 가치를 실현하고자 합니다.
     </p>
@@ -204,7 +161,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
   <!-- Container (Portfolio Section) -->
   <div class="w3-content w3-container w3-padding-64" id="events">
     <h3 class="w3-center">EVENTS</h3>
-    <p class="w3-center"><em>부제목</p><br>
+    <p class="w3-center"><em>부제목</em></p><br>
     <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
       설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
       설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
@@ -254,7 +211,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 
   <div class="w3-content w3-container w3-padding-64" id="pannastudio">
     <h3 class="w3-center">PANNASTUDIO</h3>
-    <p class="w3-center"><em>부제목</p><br>
+    <p class="w3-center"><em>부제목</em></p><br>
     <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
       설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
       설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
@@ -268,10 +225,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
         <!-- Photo Grid -->
         <div class="w3-row-padding" id="myGrid" style="margin-bottom:0px">
           <div class="w3-third">
-            <video width="100%" controls>
+            <!-- <video width="100%" controls>
               <source src="images/Football - 34604.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
+            </video> -->
+            <img src="images/p1.jpg" style="width:100%">
             <iframe style="width:100%;" src="https://www.youtube.com/embed/o7LLWYSL-hM">
             </iframe>
             <img src="images/p1.jpg" style="width:100%">
@@ -296,7 +254,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 
   <div class="w3-content w3-container w3-padding-64" id="products">
     <h3 class="w3-center">PRODUCTS</h3>
-    <p class="w3-center"><em>부제목</p><br>
+    <p class="w3-center"><em>부제목</em></p><br>
     <p>설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
       설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
       설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 설명글 
@@ -327,13 +285,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
     </div>
   </div>
 
-  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-    <div class="w3-xlarge w3-section">
-      <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-    </div>
-    <p>Copyright © 2021 Makeplayground</a></p>
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
+    <a href="https://www.instagram.com/make_playground" target="_blank" title="Makeplayground on Instagram"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.youtube.com/channel/UC7yfqm0xme14fmuCBvCD6dQ" target="_blank" title="Makeplayground on Youtube"><i class="fa fa-youtube w3-hover-opacity"></i></a>
+    <p>Copyright © 2021 Makeplayground</p>
   </footer>
 </div>
 
@@ -354,128 +309,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
   }
-
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-  }
-
-  function addEvents() {
-    //var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    var slides = document.getElementsByClassName("mySlides");
-    // Swipe
-    for (i = 0; i < slides.length; i++) {
-      slides[i].addEventListener('touchstart', handleTouchStart, false);
-    }
-    document.addEventListener('touchmove', handleTouchMove, false);
-
-    var xDown = null;                                                        
-    var yDown = null;
-
-    function getTouches(evt) {
-      return evt.touches ||             // browser API
-            evt.originalEvent.touches; // jQuery
-    }                                                     
-                                                                            
-    function handleTouchStart(evt) {
-        const firstTouch = getTouches(evt)[0];                                      
-        xDown = firstTouch.clientX;                                      
-        yDown = firstTouch.clientY;                                      
-        console.log('handleTouchStart', xDown, yDown)
-    };                                                
-                                                                              
-    function handleTouchMove(evt) {
-      if ( ! xDown || ! yDown ) {
-        console.log('handleTouchStart', xDown, xDown)
-        return;
-      }
-      
-      var xUp = evt.touches[0].clientX;                                    
-      var yUp = evt.touches[0].clientY;
-      
-      var xDiff = xDown - xUp;
-      var yDiff = yDown - yUp;
-      console.log('handleTouchMove', xUp, yUp)
-                                                                            
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-            if ( xDiff > 0 ) {
-                /* right swipe */ 
-                plusSlides(1)
-              } else {
-                /* left swipe */
-                plusSlides(-1)
-            }                       
-        } else {
-            if ( yDiff > 0 ) {
-                /* down swipe */ 
-            } else { 
-                /* up swipe */
-            }                                                                 
-        }
-        /* reset values */
-        xDown = null;
-        yDown = null;                                             
-    };
-  
-    // Swipe
-    for (i = 0; i < slides.length; i++) {
-      slides[i].addEventListener('mousedown', handleMouseDown, false);
-    }
-    
-    document.addEventListener('mouseup', handleMouseUp, false);
-
-    function handleMouseDown(evt) {
-      xDown = evt.clientX;                                      
-      yDown = evt.clientY;  
-      console.log('handleMouseDown', xDown, yDown)
-
-      event.preventDefault();
-    };   
-
-    function handleMouseUp(evt) {
-      var xUp = evt.clientX;                                    
-      var yUp = evt.clientY;
-      
-      var xDiff = xDown - xUp;
-      var yDiff = yDown - yUp;
-      console.log('handleMouseUp', xUp, yUp)
-
-      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            /* right swipe */ 
-            plusSlides(1)
-          } else {
-            /* left swipe */
-            plusSlides(-1)
-        }                       
-      }
-    };
-  }
-
-  window.onload = addEvents;
 </script>
-  
+   <!-- <script src="https://unpkg.com/swiper@7.0.9/swiper-bundle.min.js"></script> -->
+   <script src="swiper/swiper-7.0.9.min.js"></script>
+
+   <!-- Initialize Swiper -->
+   <script>
+     var swiper = new Swiper(".mySwiper", {
+       pagination: {
+         el: ".swiper-pagination",
+         clickable: true
+       },
+     });
+   </script>
 </body>
 </html>
