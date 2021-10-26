@@ -19,64 +19,40 @@ html {font-family: 'Nanum Gothic', sans-serif;}
 .w3-third img:hover{opacity: 1}
 
 /* Caption text */
-.text {
+.swiper-slide .text {
   color: #f2f2f2;
   font-size: 15px;
-  padding: 8px 12px;
+  padding: 0px 0px;
   position: absolute;
-  bottom: 8px;
+  bottom: 30px;
   width: 100%;
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px 8px;
+.swiper-slide .text-content {
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 5px 0px 0px 5px;
+  bottom: 30px;
+}
+
+.swiper-slide .text-block {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 </style>
 
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="./swiper/swiper-bundle.min.css" />
-
-<!-- Demo styles -->
-<style>
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>
 
 <!-- <body class="w3-light-grey w3-content" style="max-width:980px"> -->
 <body class="w3-auto">
@@ -84,7 +60,7 @@ html {font-family: 'Nanum Gothic', sans-serif;}
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center w3-card" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
   <!-- <h3 class="w3-padding-64 w3-center"><b>SOME<br>NAME</b></h3> -->
-  <h3 class="w3-padding-64 w3-center"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="50%" height="50%"></h3>
+  <h3 class="w3-padding-64 w3-center"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image logo" alt="Photo of Me" width="50%" height="50%"></h3>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">WHO WE ARE</a> 
   <a href="#events" onclick="w3_close()" class="w3-bar-item w3-button">EVENTS</a> 
@@ -94,7 +70,7 @@ html {font-family: 'Nanum Gothic', sans-serif;}
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-small">
-  <span class="w3-left w3-padding-small"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image " alt="Photo of Me" width="48px" height="48px"></span>
+  <span class="w3-left w3-padding-small"><img src="images/makeplayground_logo.jpg" class="w3-round w3-image logo" alt="Photo of Me" width="48px" height="48px"></span>
   <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
 </header>
 
@@ -111,18 +87,19 @@ html {font-family: 'Nanum Gothic', sans-serif;}
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <!-- <div class="numbertext">1 / 3</div> -->
-        <img src="images/main.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
+        <img src="images/main_1.jpeg" style="width:100%">
+        <div class="text-content">
+          <span >Heading "Lorem ipsum dolor sit amet"</span>
+        </div>
       </div>
       <div class="swiper-slide">
-        <!-- <div class="numbertext">2 / 3</div> -->
-        <img src="images/pannastudio2.jpg" style="width:100%">
-        <div class="text">Caption Two</div>
+        <img src="images/main_2.jpeg" style="width:100%">
+        <div class="text-block">
+          <span>What a beautiful sunrise</span>
+        </div>
       </div>
       <div class="swiper-slide">
-        <!-- <div class="numbertext">3 / 3</div> -->
-        <img src="images/pannastudio3.jpg" style="width:100%">
+        <img src="images/main_3.jpeg" style="width:100%">
         <div class="text">Caption Three</div>
       </div>
     </div>
@@ -321,6 +298,16 @@ html {font-family: 'Nanum Gothic', sans-serif;}
       clickable: true
     },
   });
+
+  document.addEventListener('DOMContentLoaded', function(event) {
+    const logEls = document.getElementsByClassName('logo');
+    for (var i = 0; i < logEls.length; i++) {
+      logEls[i].addEventListener('click', function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      });
+    }
+  })
 </script>
 </body>
 </html>
